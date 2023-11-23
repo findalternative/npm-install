@@ -1,3 +1,0 @@
-[submodule "baserepo"]
-	path = baserepo
-	url = https://github.com/brave/brave-browser.git
