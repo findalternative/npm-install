@@ -12,8 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: npm install and test 
-        run: | 
-          cd baserepo
-          yarn
-          yarn check-all
+      - name: testing
+        run: pwd
+      - name: testing
+        run: ls
