@@ -1,0 +1,28 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.1.0
+
+jobs:
+  npm-install:
+    docker:
+      - image: cimg/base:stable
+    steps:      
+      - node/install:
+          install-yarn: true 
+          node-version: '20.9.0' 
+      - checkout
+      - run: git submodule sync
+      - run: git submodule update --init
+      - run:
+          name: "npm install and test"
+          command: |
+            cd baserepo
+            yarn
+            yarn check-all
+
+# Orchestrate jobs using workflows
+# See: https://circleci.com/docs/configuration-reference/#workflows
+workflows:
+  npm-install-workflow:
+    jobs:
+      - npm-install
