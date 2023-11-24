@@ -1,0 +1,23 @@
+version: 2.1
+
+jobs:
+  npm-install:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: git submodule sync
+      - run: git submodule update --init
+      - run:
+          name: "npm install and test"
+          command: |
+            cd baserepo
+            yarn
+            yarn check-all
+
+# Orchestrate jobs using workflows
+# See: https://circleci.com/docs/configuration-reference/#workflows
+workflows:
+  npm-install-workflow:
+    jobs:
+      - npm-install
