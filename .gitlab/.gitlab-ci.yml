@@ -1,5 +1,7 @@
 build:
   image: node:latest
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
   script:
     - cd baserepo
     - npm ci
