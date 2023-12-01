@@ -1,0 +1,6 @@
+build:
+  image: node:latest
+  script:
+    - cd baserepo
+    - npm ci
+    - npm run build
