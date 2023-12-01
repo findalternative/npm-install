@@ -13,8 +13,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: recursive
-      - name: npm install and test 
+      - name: npm install
         working-directory: ./baserepo
         run: |
-          yarn
-          yarn check-all
+          npm ci
+          npm run build

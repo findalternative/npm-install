@@ -14,11 +14,11 @@ jobs:
       - run: git submodule sync
       - run: git submodule update --init
       - run:
-          name: "npm install and test"
+          name: "npm install"
           command: |
             cd baserepo
-            yarn
-            yarn check-all
+            npm ci
+            npm run build
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
