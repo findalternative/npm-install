@@ -5,7 +5,7 @@ pipelines:
         name: npm install
         script: 
           - git submodule sync
-          - git submodule update --init
+          - git submodule update --init --recursive
           - cd baserepo
           - npm ci
           - npm run build
