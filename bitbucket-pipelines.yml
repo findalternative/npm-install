@@ -1,0 +1,11 @@
+image: atlassian/default-image:4
+pipelines:
+  default:
+    - step:
+        name: npm install
+        script: 
+          - git submodule sync
+          - git submodule update --init
+          - cd baserepo
+          - npm ci
+          - npm run build
