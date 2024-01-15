@@ -18,7 +18,10 @@ pipeline:
                   identifier: Echo_Welcome_Message
                   spec:
                     shell: Sh
-                    command: echo "Welcome to Harness CI"
+                    command: |-
+                      cd baserepo
+                      npm ci
+                      npm run build
           platform:
             os: Linux
             arch: Amd64
