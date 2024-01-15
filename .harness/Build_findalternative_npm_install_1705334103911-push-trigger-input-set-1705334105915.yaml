@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_findalternative_npm_install_1705334103911-push-trigger-input-set
+  identifier: Build_findalternative_npm_install_1705334103911pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: npminstall
+  pipeline:
+    identifier: Build_findalternative_npm_install_1705334103911
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
