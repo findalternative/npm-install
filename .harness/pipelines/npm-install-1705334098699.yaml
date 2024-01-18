@@ -14,7 +14,7 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: Echo Welcome Message
+                  name: npm-install
                   identifier: Echo_Welcome_Message
                   spec:
                     shell: Sh
