@@ -20,6 +20,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       cd baserepo
+                      ls
                       npm ci
                       npm run build
           platform:
