@@ -1,0 +1,39 @@
+pipeline:
+  name: npm_install
+  identifier: npm_install
+  projectIdentifier: npminstall
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github_OAuth_1705332593378
+        repoName: findalternative/npm-install
+        build: <+input>
+  stages:
+    - stage:
+        name: npm-install
+        identifier: npminstall
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: npm-install
+                  identifier: npminstall
+                  spec:
+                    shell: Sh
+                    command: |-
+                      git submodule update --init --recursive
+                      cd baserepo
+                      npm ci
+                      npm run build
