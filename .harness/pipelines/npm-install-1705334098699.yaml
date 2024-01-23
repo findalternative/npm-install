@@ -15,8 +15,15 @@ pipeline:
             steps:
               - step:
                   type: Run
+                  name: pull submodule
+                  identifier: up
+                  spec:
+                    shell: Sh
+                    command: git submodule update --init --recursive
+              - step:
+                  type: Run
                   name: npm-install
-                  identifier: Echo_Welcome_Message
+                  identifier: npm_install
                   spec:
                     shell: Sh
                     command: |-
