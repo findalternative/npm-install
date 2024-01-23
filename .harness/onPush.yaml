@@ -1,0 +1,15 @@
+inputSet:
+  name: onPush
+  identifier: onPush
+  orgIdentifier: default
+  projectIdentifier: npminstall
+  pipeline:
+    identifier: npm_install
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
+  object Object: pipeline.properties.ci.codebase
