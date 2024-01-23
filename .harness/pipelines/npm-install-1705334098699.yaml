@@ -10,6 +10,7 @@ pipeline:
         type: CI
         spec:
           cloneCodebase: true
+          recursive: true
           execution:
             steps:
               - step:
@@ -20,7 +21,6 @@ pipeline:
                     shell: Sh
                     command: |-
                       cd baserepo
-                      ls
                       npm ci
                       npm run build
           platform:
