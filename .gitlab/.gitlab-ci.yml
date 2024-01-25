@@ -6,3 +6,5 @@ build:
     - cd baserepo
     - npm ci
     - npm run build
+  rules:
+    - if: $ENABLE_PIPELINES == "true"
