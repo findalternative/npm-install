@@ -1,5 +1,2 @@
 steps:
-  - command: echo $PATH
-  - command: echo $pwd
-  - command: . ~/.bashrc
-  - command: cd baserepo && npm install
+  - command: . ~/.bashrc && cd baserepo && npm install
