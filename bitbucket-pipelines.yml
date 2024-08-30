@@ -4,7 +4,7 @@ pipelines:
     - step:
         runs-on:
           - self.hosted
-          - linux
+          - linux2
         name: npm install
         script: 
           - git submodule sync
